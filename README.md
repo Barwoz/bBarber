@@ -6,7 +6,7 @@ INSTRUCTION:
 
 #####--|MAGASIN|--#####
 ensure barwoz_barbershop
-5 - Ajouter le sql dans votre Base de Donnée 6 - Relancer votre serveur et le Tour est joué ! Vous avez enfin votre Shop en RageUI Fonctionnel !
+5 - Relancer votre serveur et le Tour est joué ! Vous avez enfin votre Shop en RageUI Fonctionnel !
 
 Discord : " https://discord.gg/gceeEXUsG5 "
 
