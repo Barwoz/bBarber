@@ -1,4 +1,4 @@
-Créer par BARWOZ ! Armurerie en RageUI V2 (0.01ms) J'attends vos retours via Discord !
+Créer par BARWOZ ! BarberShop en RageUI V2 (0.01ms) J'attends vos retours via Discord !
 
 INSTRUCTION:
 
