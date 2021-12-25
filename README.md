@@ -13,7 +13,7 @@ ensure bBarberShop
 
 5 - Relancer votre serveur et le Tour est joué ! Vous avez enfin votre Shop en RageUI Fonctionnel !
 
-Discord : " https://discord.gg/gceeEXUsG5 "
+Discord : " https://discord.gg/s6BW2cMCjt "
 
 Youtube : "https://www.youtube.com/channel/UCfNvauIFWsKmyKvrb9eK5sw"
 
