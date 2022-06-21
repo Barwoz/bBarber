@@ -47,7 +47,6 @@ function OpenMenuBarber()
                             TriggerServerEvent('barwoz:coiffeur')
                         end
                     }) 
-                    
                     RageUI.Separator('~r~↓~s~ Coiffeur ~r~↓~s~')
 
                     RageUI.List('Cheveux', {"~r~1~s~", "~r~2~s~", "~r~3~s~", "~r~4~s~", "~r~5~s~", "~r~6~s~", "~r~7~s~", "~r~8~s~", "~r~9~s~", "~r~10~s~","~r~11~s~", "~r~12~s~", "~r~13~s~", "~r~14~s~","~r~15~s~", "~r~16~s~", "~r~17~s~", "~r~18~s~","~r~19~s~", "~r~20~s~", "~r~21~s~", "~r~22~s~", "~r~23~s~", "~r~24~s~", "~r~25~s~", "~r~26~s~","~r~27~s~", "~r~28~s~", "~r~29~s~", "~r~30~s~","~r~31~s~", "~r~32~s~", "~r~33~s~", "~r~34~s~","~r~35~s~", "~r~36~s~", "~r~37~s~", "~r~38~s~","~r~39~s~", "~r~40~s~", "~r~41~s~", "~r~42~s~","~r~43~s~", "~r~44~s~", "~r~45~s~" }, MenuList.List, nil, {}, true, {
