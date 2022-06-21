@@ -23,6 +23,7 @@ AddEventHandler('barwoz:coiffeur', function()
 
     xPlayer.removeMoney(price)
          TriggerClientEvent('esx:showNotification', source, "~g~Tu as payé le Coiffeur")
+         TriggerClientEvent("barwoz:saveSkin", source)
     else
          TriggerClientEvent('esx:showNotification', source, "Il vous ~r~manque~g~ $"..price-xMoney.."~w~ !")
     end
