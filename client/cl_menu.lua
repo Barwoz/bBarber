@@ -26,7 +26,11 @@ local BarberMenu = false
 ------------------------------MENU SHOPS
 
 local barber = RageUI.CreateMenu("Coiffeur", "Choisis ta Coupe", 10, 80)
-barber.Closed = function() BarberMenu = false end
+barber.Closed = function() 
+    BarberMenu = false 
+    FreezeEntityPosition(PlayerPedId(), false)
+end
+barber.Closable = false
 barber.EnableMouse = true;
 
 function OpenMenuBarber()
@@ -34,6 +38,7 @@ function OpenMenuBarber()
         BarberMenu = false
     else
         BarberMenu = true
+        FreezeEntityPosition(PlayerPedId(), true)
         RageUI.Visible(barber, true)
         CreateThread(function()
             while BarberMenu do
@@ -42,11 +47,22 @@ function OpenMenuBarber()
 
                     RageUI.Separator('~r~↓~s~ Payer le Coiffeur ~r~↓~s~')
 
-                    RageUI.Button("Payer", nil, {RightLabel = "~r~50$"}, true, {
+                    RageUI.Button("Payer", nil, {Color = {BackgroundColor = {0, 255, 0, 100}}, RightLabel = "~r~50$"}, true, {
                         onSelected = function()
                             TriggerServerEvent('barwoz:coiffeur')
                         end
                     }) 
+
+                    RageUI.Button("Fermer le Menu", nil, {Color = {BackgroundColor = {255, 0, 0, 100}}}, true, {
+                        onSelected = function()
+                            BarberMenu = false 
+                            RageUI.CloseAll()
+                            FreezeEntityPosition(PlayerPedId(), false)
+                            ESX.TriggerServerCallback('esx_skin:getPlayerSkin', function(skin, jobSkin)
+                                TriggerEvent('skinchanger:loadSkin', skin)
+                            end)
+                        end
+                    })
                     RageUI.Separator('~r~↓~s~ Coiffeur ~r~↓~s~')
 
                     RageUI.List('Cheveux', {"~r~1~s~", "~r~2~s~", "~r~3~s~", "~r~4~s~", "~r~5~s~", "~r~6~s~", "~r~7~s~", "~r~8~s~", "~r~9~s~", "~r~10~s~","~r~11~s~", "~r~12~s~", "~r~13~s~", "~r~14~s~","~r~15~s~", "~r~16~s~", "~r~17~s~", "~r~18~s~","~r~19~s~", "~r~20~s~", "~r~21~s~", "~r~22~s~", "~r~23~s~", "~r~24~s~", "~r~25~s~", "~r~26~s~","~r~27~s~", "~r~28~s~", "~r~29~s~", "~r~30~s~","~r~31~s~", "~r~32~s~", "~r~33~s~", "~r~34~s~","~r~35~s~", "~r~36~s~", "~r~37~s~", "~r~38~s~","~r~39~s~", "~r~40~s~", "~r~41~s~", "~r~42~s~","~r~43~s~", "~r~44~s~", "~r~45~s~" }, MenuList.List, nil, {}, true, {
@@ -126,7 +142,7 @@ end
 
 ------------------------------DRAWMARKERS
 
-Citizen.CreateThread(function()
+CreateThread(function()
     while true do
         local pCoords2 = GetEntityCoords(PlayerPedId())
         local activerfps = false
@@ -138,15 +154,11 @@ Citizen.CreateThread(function()
                 if BarberMenu == false then
                     if IsControlJustReleased(0, 38) then
                         OpenMenuBarber()
-                        FreezeEntityPosition(PlayerPedId(), true)
                     end
                 end
             elseif #(pCoords2 - v.position) < 7.0 then
                 activerfps = true
                 DrawMarker(29, v.position, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.5, 0.5, 0.5, 0, 255, 0, 170, 1, 1, 2, 0, nil, nil, 0)
-            elseif #(pCoords2 - v.position) > 3 then
-                RageUI.CloseAll()
-                BarberMenu = false
             end
         end
         if activerfps then
@@ -159,8 +171,7 @@ end)
 
 ------------------------------BLIPS
 
-Citizen.CreateThread(function()
-
+CreateThread(function()
     for _, info in pairs(Config.blipsBarber) do
         info.blip = AddBlipForCoord(info.x, info.y, info.z)
         SetBlipSprite(info.blip, info.id)
