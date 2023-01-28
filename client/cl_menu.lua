@@ -78,7 +78,7 @@ function OpenMenuBarber()
                             SettingsMenu.ColorHear.primary[2] = CurrentIndex
                             TriggerEvent("skinchanger:change", "hair_color_1", SettingsMenu.ColorHear.primary[2])
                         end
-                    }, 4);
+                    }, 5);
 
                     RageUI.ColourPanel("Couleur cheveux", RageUI.PanelColour.HairCut, SettingsMenu.ColorHear.secondary[1], SettingsMenu.ColorHear.secondary[2], {
                         onColorChange = function(MinimumIndex, CurrentIndex)
@@ -86,7 +86,7 @@ function OpenMenuBarber()
                             SettingsMenu.ColorHear.secondary[2] = CurrentIndex
                             TriggerEvent("skinchanger:change", "hair_color_2", SettingsMenu.ColorHear.secondary[2])
                         end
-                    }, 4);
+                    }, 5);
 
                     RageUI.List('Barbe', {"~r~1~s~", "~r~2~s~", "~r~3~s~", "~r~4~s~", "~r~5~s~", "~r~6~s~", "~r~7~s~", "~r~8~s~", "~r~9~s~", "~r~10~s~", "~r~11~s~", "~r~12~s~", "~r~13~s~", "~r~14~s~", "~r~15~s~", "~r~16~s~", "~r~17~s~", "~r~18~s~", "~r~19~s~", "~r~20~s~", "~r~21~s~", "~r~22~s~", "~r~23~s~", "~r~24~s~", "~r~25~s~", "~r~26~s~", "~r~27~s~", "~r~28~s~"
                     }, MenuList.List1, nil, {}, true, {
@@ -102,14 +102,14 @@ function OpenMenuBarber()
                             SettingsMenu.ColorBeard.primary[2] = CurrentIndex
                             TriggerEvent("skinchanger:change", "beard_3",SettingsMenu.ColorBeard.primary[2])
                         end
-                    }, 5);
+                    }, 6);
 
                     RageUI.PercentagePanel(SettingsMenu.percentage, 'Opacité', '0%', '100%', {
                         onProgressChange = function(Percentage)
                             SettingsMenu.percentage = Percentage
                             TriggerEvent("skinchanger:change", "beard_2", Percentage * 10)
                         end
-                    }, 5);
+                    }, 6);
 
                     RageUI.List('Sourcils', {"~r~1~s~", "~r~2~s~", "~r~3~s~", "~r~4~s~", "~r~5~s~", "~r~6~s~", "~r~7~s~", "~r~8~s~", "~r~9~s~", "~r~10~s~", "~r~11~s~", "~r~12~s~", "~r~13~s~", "~r~14~s~", "~r~15~s~", "~r~16~s~", "~r~17~s~", "~r~18~s~", "~r~19~s~", "~r~20~s~", "~r~21~s~", "~r~22~s~", "~r~23~s~", "~r~24~s~", "~r~25~s~", "~r~26~s~", "~r~27~s~", "~r~28~s~", "~r~29~s~", "~r~30~s~", "~r~31~s~", "~r~32~s~", "~r~33~s~", "~r~34~s~", "~r~35~s~"
                     }, MenuList.List2, nil, {}, true, {
@@ -125,14 +125,14 @@ function OpenMenuBarber()
                             SettingsMenu.ColorBrow.primary[2] = CurrentIndex
                             TriggerEvent("skinchanger:change", "eyebrows_3", SettingsMenu.ColorBrow.primary[2])
                         end
-                    }, 6);
+                    }, 7);
 
                     RageUI.PercentagePanel(SettingsMenu.percentage, 'Opacité', '0%', '100%', {
                         onProgressChange = function(Percentage)
                             SettingsMenu.percentage = Percentage
                             TriggerEvent("skinchanger:change", "eyebrows_2", Percentage * 10)
                         end
-                    }, 6);
+                    }, 7);
 
                 end)
             end
